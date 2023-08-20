@@ -1,0 +1,12 @@
+{
+  "name": "@monorepo/source",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {},
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "nx": "16.7.2",
+    "@nx/workspace": "16.7.2"
+  }
+}
