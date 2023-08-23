@@ -1,3 +1,5 @@
+import {useQuery} from "@tanstack/react-query";
+import ProductsService from "./features/product/product-service";
 import {Button} from '@monorepo/ui'
 
 import styles from './app.module.scss';
@@ -5,8 +7,17 @@ import styles from './app.module.scss';
 import { Route, Routes, Link } from 'react-router-dom';
 
 export function App() {
+  const {isLoading, error, data} = useQuery({
+    queryKey: ['allProducts'],
+    queryFn: () => ProductsService.getAll()
+  })
+
+  if (isLoading) return 'Loading...'
+  if (error) return 'An error has occurred: ' + error.message
+
   return (
     <div>
+      <h1>{data[0].title}</h1>
       <Button/>
       <br />
       <hr />

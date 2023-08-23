@@ -1,6 +1,9 @@
-import { StrictMode } from 'react';
+import {StrictMode} from 'react';
 import * as ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
+import {BrowserRouter} from 'react-router-dom';
+
+const queryClient = new QueryClient()
 
 import App from './app';
 
@@ -9,8 +12,10 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App/>
+      </BrowserRouter>
+    </QueryClientProvider>
   </StrictMode>
 );
