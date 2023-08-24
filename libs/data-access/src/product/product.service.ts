@@ -1,5 +1,5 @@
 import {ApiClient} from "../api";
-import {ProductId, CreateProduct} from "../../../feature/src/product/product.types";
+import {ProductId, CreateProduct} from "@monorepo/feature/src/product/product.types";
 
 const productsUrl = "/products";
 
