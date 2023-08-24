@@ -1,9 +1,9 @@
-import ApiClient from "client/app/services";
-import {ProductId, CreateProduct} from "./product-types";
+import {ApiClient} from "../api";
+import {ProductId, CreateProduct} from "../../../feature/src/product/product.types";
 
 const productsUrl = "/products";
 
-const ProductsService = {
+export const ProductsService = {
     getAll(limit: number = 20, offset: number = 0) {
         return ApiClient.get(productsUrl + `?limit=${limit}&offset=${offset}`)
     },
@@ -28,5 +28,3 @@ const ProductsService = {
         return ApiClient.delete(productsUrl + "/" + productId);
     }
 }
-
-export default ProductsService

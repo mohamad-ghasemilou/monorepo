@@ -7,7 +7,7 @@ const api = axios.create({
   }
 })
 
-const ApiClient = {
+export const ApiClient = {
   get: async(url:string) => {
     const response = await api.get(url)
     return response.data
@@ -28,5 +28,3 @@ const ApiClient = {
     return response.data
   }
 }
-
-export default ApiClient

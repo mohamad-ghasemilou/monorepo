@@ -1,5 +1,5 @@
 import {useQuery} from "@tanstack/react-query";
-import ProductsService from "./features/product/product-service";
+import {ProductsService} from "../../../libs/data-access/src";
 import {Button} from '@monorepo/ui'
 
 import styles from './app.module.scss';
