@@ -9,7 +9,4 @@ export interface Product {
   category: string;
 }
 
-type CreateProductBase = Omit<Product, "id" | "category">
-export interface CreateProduct extends CreateProductBase {
-  categoryId: number;
-}
+export type CreateProduct = Omit<Product, "id" | "category"> & { categoryId: number }

@@ -7,14 +7,6 @@ import { Meta } from '@storybook/react'
 export default {
   title: 'Button',
   component: Button,
-  // decorators: [withTests({ results })],
-  argTypes: {
-    content: {
-      defaultValue: 'Button',
-      name: 'Content',
-      type: { name: 'string', required: true },
-    }
-  },
 } as Meta
 
 const argsWithDefault = (args : any) => {
