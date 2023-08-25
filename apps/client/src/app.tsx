@@ -1,6 +1,6 @@
 import {useQuery} from "@tanstack/react-query";
-import ProductsService from "./features/product/product-service";
-import {Button} from '@monorepo/ui'
+import {ProductsService} from "../../../libs/data-access/src";
+import {Button} from "../../../libs/ui/src/button";
 
 import styles from './app.module.scss';
 
@@ -13,7 +13,7 @@ export function App() {
   })
 
   if (isLoading) return 'Loading...'
-  if (error) return 'An error has occurred: ' + error.message
+  if (error) return 'An error has occurred: '
 
   return (
     <div>
@@ -37,7 +37,7 @@ export function App() {
           path="/"
           element={
             <div>
-              This is the generated root route.{' '}
+              aa This is the generated root route.{' '}
               <Link to="/page-2">Click here for page 2.</Link>
             </div>
           }

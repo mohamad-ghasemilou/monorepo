@@ -1,9 +1,21 @@
-import ApiClient from "client/app/services";
-import {ProductId, CreateProduct} from "./product-types";
+import {ApiClient} from "../api";
+// import type {ProductId, CreateProduct} from "@monorepo/feature";
+export type ProductId = number;
+
+export interface Product {
+  id: ProductId;
+  title: string;
+  price: number;
+  image: string;
+  description: string;
+  category: string;
+}
+
+export type CreateProduct = Omit<Product, "id" | "category"> & { categoryId: number }
 
 const productsUrl = "/products";
 
-const ProductsService = {
+export const ProductsService = {
     getAll(limit: number = 20, offset: number = 0) {
         return ApiClient.get(productsUrl + `?limit=${limit}&offset=${offset}`)
     },
@@ -28,5 +40,3 @@ const ProductsService = {
         return ApiClient.delete(productsUrl + "/" + productId);
     }
 }
-
-export default ProductsService
