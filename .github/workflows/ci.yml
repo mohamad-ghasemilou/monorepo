@@ -18,8 +18,26 @@ jobs:
         with:
           node-version: ${{ env.node-version }}
           cache: yarn
+
       - name: Install dependencies
         run: yarn install
 
       - name: Build
-        run: yarn run build
+        run: yarn build
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: action/checkout@v2
+      - uses: action/setup-node@v2
+        with:
+          node-versions: ${{ env.node-version }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test
+        run: yarn test --max-parallel=2

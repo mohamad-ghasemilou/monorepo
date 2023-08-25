@@ -5,7 +5,8 @@
   "scripts": {
     "client": "nx serve client",
     "storybook": "nx run ui:storybook",
-    "build": "nx build client"
+    "build": "nx build client",
+    "test": "nx run-many --target=test --all --prallel"
   },
   "private": true,
   "devDependencies": {
