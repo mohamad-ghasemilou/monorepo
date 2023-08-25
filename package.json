@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "client": "nx serve client",
-    "storybook": "nx run ui:storybook"
+    "storybook": "nx run ui:storybook",
+    "build": "nx build"
   },
   "private": true,
   "devDependencies": {
