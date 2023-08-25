@@ -1,11 +1,14 @@
 name: monorepo
 
+env:
+  node-version: 18.x
+
 on:
   pull_request: {}
   workflow_dispatch: {}
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
