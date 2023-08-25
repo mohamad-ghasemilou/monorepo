@@ -30,8 +30,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: action/checkout@v2
-      - uses: action/setup-node@v2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
         with:
           node-versions: ${{ env.node-version }}
           cache: yarn
