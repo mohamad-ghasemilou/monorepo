@@ -5,7 +5,7 @@
   "scripts": {
     "client": "nx serve client",
     "storybook": "nx run ui:storybook",
-    "build": "nx build"
+    "build": "nx build client"
   },
   "private": true,
   "devDependencies": {

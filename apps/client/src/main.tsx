@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom/client';
 import {QueryClient, QueryClientProvider} from '@tanstack/react-query'
 import {BrowserRouter} from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
-import {theme} from "@monorepo/ui";
+import {theme} from "../../../libs/ui/src";
 import CssBaseline from '@mui/material/CssBaseline';
 
 const queryClient = new QueryClient()
