@@ -2,6 +2,7 @@ name: monorepo
 
 env:
   node-version: 18.x
+  ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
 
 on:
   pull_request: {}
@@ -45,3 +46,15 @@ jobs:
       - name: Test
         run: yarn test --max-parallel=2
 
+  e2e:
+    name: E2E on Chrome
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+
+        with:
+          config-file: ../apps/client-e2e/cypress.config.json
+          build: yarn build
+          start: yarn run client-e2e
