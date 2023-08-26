@@ -6,7 +6,8 @@
     "client": "nx serve client",
     "storybook": "nx run ui:storybook",
     "build": "nx build client",
-    "test": "nx run-many --target=test --all --prallel"
+    "test": "nx run-many --target=test --all --prallel",
+    "client-e2e": "nx e2e client-e2e --configuration=production"
   },
   "private": true,
   "devDependencies": {

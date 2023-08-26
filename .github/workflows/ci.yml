@@ -45,3 +45,20 @@ jobs:
       - name: Test
         run: yarn test --max-parallel=2
 
+  e2e:
+    name: E2E on Chrome
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          node-versions: ${{ env.node-version }}
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Test
+        run: yarn run client-e2e
