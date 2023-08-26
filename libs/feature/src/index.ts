@@ -1,1 +1,1 @@
-//export * from './product/product.types';
+export * from './product';
