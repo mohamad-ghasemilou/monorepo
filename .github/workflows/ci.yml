@@ -2,6 +2,7 @@ name: monorepo
 
 env:
   node-version: 18.x
+  ELECTRON_EXTRA_LAUNCH_ARGS: '--disable-gpu'
 
 on:
   pull_request: {}
