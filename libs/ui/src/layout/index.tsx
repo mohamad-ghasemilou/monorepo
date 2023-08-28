@@ -1,5 +1,5 @@
+import {ReactElement, Fragment} from "react";
 import Header from "../header";
-import {ReactElement} from "react";
 import Sidebar from "../sidebar";
 
 interface Props {
@@ -23,13 +23,15 @@ const items = [
 
 function Layout(props:Props) {
   return (
-    <>
+    <Fragment>
       <Header/>
-      <main>
+      <main style={{display:'flex'}}>
         <Sidebar items={items} onItemClick={_=>{}}/>
-        {props.children}
+        <Fragment>
+          {props.children}
+        </Fragment>
       </main>
-    </>
+    </Fragment>
   );
 }
 

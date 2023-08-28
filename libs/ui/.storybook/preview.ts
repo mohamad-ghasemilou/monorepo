@@ -13,3 +13,5 @@ export const decorators = [
     GlobalStyles: CssBaseline,
   })
 ];
+
+export default decorators
