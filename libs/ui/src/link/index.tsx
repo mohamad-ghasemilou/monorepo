@@ -8,7 +8,6 @@ interface Props {
 }
 
 function Link(props: Props) {
-  console.log(props.children)
   return (
     <MuiLink component={RouterLink} to={props.to}>
       {props.children}

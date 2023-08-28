@@ -1,34 +1,30 @@
-import AppBar from '@mui/material/AppBar';
+import AppBar, {AppBarProps} from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
+import {styled} from '@mui/system';
 import Link from "../link";
+
+const StyledAppBar = styled(AppBar)<AppBarProps>(({theme}) => ({
+  color: theme.palette.success.second
+}));
 
 function Header() {
   return (
-    <Box component="header" sx={{flexGrow: 1}} >
-      <AppBar position="static" sx={{background: '#83b900'}} >
+    <Box component="header" sx={{flexGrow: 1}}>
+      <StyledAppBar position="static">
         <Toolbar>
-          {/*<IconButton*/}
-          {/*  size="large"*/}
-          {/*  edge="start"*/}
-          {/*  color="inherit"*/}
-          {/*  aria-label="menu"*/}
-          {/*  sx={{ mr: 2 }}*/}
-          {/*>*/}
-          {/*  <MenuIcon />*/}
-          {/*</IconButton>*/}
           <Box component="div" sx={{flexGrow: 1}}>
             <Link to="/">
-              <Typography variant="h6">
+              <Typography variant="h6" color="white">
                 Home
               </Typography>
             </Link>
           </Box>
           <Button color="inherit">Login</Button>
         </Toolbar>
-      </AppBar>
+      </StyledAppBar>
     </Box>
   );
 }
