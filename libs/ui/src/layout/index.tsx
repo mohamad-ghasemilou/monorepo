@@ -3,7 +3,8 @@ import Header from "../header";
 import Sidebar from "../sidebar";
 
 interface Props {
-  children: ReactElement
+  children: ReactElement;
+  sidebar: boolean;
 }
 
 const items = [
@@ -21,12 +22,12 @@ const items = [
   },
 ]
 
-function Layout(props:Props) {
+export function Layout(props:Props) {
   return (
     <Fragment>
       <Header/>
       <main style={{display:'flex'}}>
-        <Sidebar items={items} onItemClick={_=>{}}/>
+        {props.sidebar && <Sidebar items={items} onItemClick={_ => {}}/>}
         <Fragment>
           {props.children}
         </Fragment>
@@ -34,5 +35,3 @@ function Layout(props:Props) {
     </Fragment>
   );
 }
-
-export default Layout;

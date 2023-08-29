@@ -1,7 +1,7 @@
 import {useQuery} from "@tanstack/react-query";
 import {ProductsService} from "@monorepo/data-access";
 import {Button} from "@monorepo/ui";
-
+import {Layout} from "@monorepo/feature"
 import styles from './app.module.scss';
 
 import { Route, Routes, Link } from 'react-router-dom';
@@ -16,7 +16,7 @@ export function App() {
   if (error) return 'An error has occurred: '
 
   return (
-    <div>
+    <Layout>
       <h1>{data[0].title}</h1>
       <Button/>
       <br />
@@ -51,7 +51,7 @@ export function App() {
           }
         />
       </Routes>
-    </div>
+    </Layout>
   );
 }
 
