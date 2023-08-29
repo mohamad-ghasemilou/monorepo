@@ -8,10 +8,10 @@ import Link from "../link";
 import {productRoute} from "@monorepo/feature";
 
 interface Props {
-  id: string;
+  id: number;
   title: string;
   description: string;
-  price: string;
+  price: number;
   image: string;
 }
 

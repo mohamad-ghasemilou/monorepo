@@ -16,7 +16,7 @@ export function homeRoute(query?:string):string {
     return routes.home + (query ? `?category=${query}` : '');
 }
 
-export function productRoute(id:string):string {
+export function productRoute(id:number):string {
     return routes.product + '/' + id;
 }
 
