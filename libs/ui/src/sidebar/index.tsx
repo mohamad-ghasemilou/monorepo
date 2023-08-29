@@ -19,7 +19,7 @@ interface Props {
 
 function Sidebar(props: Props) {
   return (
-    <Box sx={{marginRight: 4, marginTop: 1, width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
+    <Box mt={1} sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
       <Paper elevation={0} square>
         <List>
           {props.items.map((item) => (

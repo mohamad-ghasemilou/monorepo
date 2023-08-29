@@ -1,6 +1,7 @@
 import {ReactElement, Fragment} from "react";
 import Header from "../header";
 import Sidebar from "../sidebar";
+import Box from "@mui/material/Box";
 
 interface Props {
   children: ReactElement;
@@ -28,9 +29,9 @@ export function Layout(props:Props) {
       <Header/>
       <main style={{display:'flex'}}>
         {props.sidebar && <Sidebar items={items} onItemClick={_ => {}}/>}
-        <Fragment>
+        <Box m={2}>
           {props.children}
-        </Fragment>
+        </Box>
       </main>
     </Fragment>
   );

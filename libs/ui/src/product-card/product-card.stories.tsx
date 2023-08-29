@@ -1,5 +1,5 @@
 import {Meta} from '@storybook/react'
-import ProductCard from "./index"
+import {ProductCard} from "./index"
 
 export default {
   title: 'Product Card',
