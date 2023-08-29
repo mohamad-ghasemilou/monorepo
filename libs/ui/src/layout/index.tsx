@@ -1,9 +1,11 @@
 import {ReactElement, Fragment} from "react";
 import Header from "../header";
 import Sidebar from "../sidebar";
+import Box from "@mui/material/Box";
 
 interface Props {
-  children: ReactElement
+  children: ReactElement;
+  sidebar: boolean;
 }
 
 const items = [
@@ -21,18 +23,16 @@ const items = [
   },
 ]
 
-function Layout(props:Props) {
+export function Layout(props:Props) {
   return (
     <Fragment>
       <Header/>
       <main style={{display:'flex'}}>
-        <Sidebar items={items} onItemClick={_=>{}}/>
-        <Fragment>
-          {props.children}
-        </Fragment>
+        {props.sidebar && <Sidebar items={items} onItemClick={_ => {}}/>}
+        <Box m={2}>
+            {props.children}
+        </Box>
       </main>
     </Fragment>
   );
 }
-
-export default Layout;

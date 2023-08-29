@@ -3,7 +3,7 @@ const product = 'product';
 const singleProduct = product + '/:productId';
 const cart = 'cart';
 
-const routes = {
+export const routes = {
     home,
     product,
     singleProduct,
