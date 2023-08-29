@@ -4,3 +4,4 @@ export * from './link';
 export * from './header';
 export * from './sidebar';
 export * from './layout';
+export * from './pages';
