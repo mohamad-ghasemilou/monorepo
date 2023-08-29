@@ -30,7 +30,7 @@ export function Layout(props:Props) {
       <main style={{display:'flex'}}>
         {props.sidebar && <Sidebar items={items} onItemClick={_ => {}}/>}
         <Box m={2}>
-          {props.children}
+            {props.children}
         </Box>
       </main>
     </Fragment>

@@ -8,14 +8,10 @@ function HomePage() {
     queryFn: () => ProductsService.getAll()
   })
 
-  function handleClick(id:string):void {
-    //go to product id page
-  }
-
   if (isLoading) return <h1>loading products</h1> // skeleton
 
   return (
-    <HomePageUI products={data} onClick={(id) => handleClick(id)}/>
+    <HomePageUI products={data}/>
   );
 }
 
