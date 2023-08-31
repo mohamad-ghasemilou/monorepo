@@ -6,7 +6,9 @@ import { ThemeProvider } from '@mui/material/styles';
 import {lightTheme} from "@monorepo/ui";
 import CssBaseline from '@mui/material/CssBaseline';
 
-export const queryClient = new QueryClient()
+export const queryClient = new QueryClient({
+  defaultOptions: { queries: { staleTime: 10000 }}
+})
 
 import App from './app';
 const rootElement = document.getElementById('root') as HTMLElement

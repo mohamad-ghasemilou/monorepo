@@ -1,6 +1,6 @@
 import Grid from "@mui/material/Grid";
 import type {Product} from "@monorepo/feature";
-import {ProductCard} from '@monorepo/ui'
+import {ProductCard} from "@monorepo/ui"
 
 interface Props {
   products: Product[];
@@ -26,4 +26,3 @@ export function HomePage(props: Props) {
     </Grid>
   );
 }
-
