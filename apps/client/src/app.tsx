@@ -4,6 +4,7 @@ import {routes, Layout} from "@monorepo/feature"
 import styles from './app.module.scss';
 
 const LazyHomePage = lazy(() => import("../../../libs/feature/src/pages/home/index"));
+const LazyProductPage = lazy(() => import("../../../libs/feature/src/pages/product/index"));
 
 export function App() {
   return (
@@ -11,13 +12,7 @@ export function App() {
       <Layout>
         <Routes>
           <Route path={routes.home} element={<LazyHomePage/>}/>
-          <Route path={routes.singleProduct}
-            element={
-              <div>
-                <Link to="/">Click here to go back to root page.</Link>
-              </div>
-            }
-          />
+          <Route path={routes.singleProduct} element={<LazyProductPage/>}/>
         </Routes>
       </Layout>
     </Suspense>

@@ -5,14 +5,15 @@ import {BrowserRouter} from 'react-router-dom';
 import { ThemeProvider } from '@mui/material/styles';
 import {lightTheme} from "@monorepo/ui";
 import CssBaseline from '@mui/material/CssBaseline';
+import App from './app';
 
 export const queryClient = new QueryClient({
   defaultOptions: { queries: { staleTime: 10000 }}
 })
 
-import App from './app';
 const rootElement = document.getElementById('root') as HTMLElement
 const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <StrictMode>
     <QueryClientProvider client={queryClient} contextSharing={true}>

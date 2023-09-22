@@ -18,7 +18,7 @@ interface Props {
 export function ProductCard(props: Props) {
   return (
     <Link to={productRoute(props.id)}>
-      <Card sx={{maxWidth: 345, maxHeight: 300}}>
+      <Card sx={{maxHeight: 300}}>
         <CardActionArea>
           <CardMedia
             component="img"

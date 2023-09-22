@@ -9,7 +9,7 @@ interface Props {
 
 function Link(props: Props) {
   return (
-    <MuiLink component={RouterLink} to={props.to} sx={{textDecoration:'none'}}>
+    <MuiLink component={RouterLink} to={props.to} sx={{textDecoration:'none', padding:0}}>
       {props.children}
     </MuiLink>
   )

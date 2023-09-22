@@ -17,7 +17,7 @@ function Header() {
         <Toolbar>
           <Box component="div" sx={{flexGrow: 1}}>
             <Link to="/">
-              <Typography variant="h6" color="white">
+              <Typography variant="h6" color="black">
                 Home
               </Typography>
             </Link>
