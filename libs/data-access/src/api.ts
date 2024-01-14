@@ -23,7 +23,7 @@ export const ApiClient = {
     return response.data
   },
 
-  delete: async(url:string, ) => {
+  delete: async(url:string) => {
     const response = await api.delete(url);
     return response.data
   }

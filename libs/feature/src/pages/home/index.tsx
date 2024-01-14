@@ -8,7 +8,7 @@ export function HomePage() {
     queryFn: () => ProductsService.getAll(),
   })
 
-  if (isLoading) return <h1>loading products</h1> // skeleton
+  if (isLoading) return <h1>loading products</h1> //todo: use skeleton
 
   return (
     <HomePageUI products={data}/>
