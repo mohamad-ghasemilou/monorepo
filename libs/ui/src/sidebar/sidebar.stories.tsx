@@ -1,9 +1,9 @@
 import { Meta } from '@storybook/react'
-import Sidebar from "./index"
+import {SidebarUI} from "./index"
 
 export default {
   title: 'Sidebar',
-  component: Sidebar,
+  component: SidebarUI,
 } as Meta
 
 const items = [
@@ -27,5 +27,5 @@ export const Basic = () => {
     alert(`item with id ${id} clicked`)
   }
 
-  return (<Sidebar items={items} onItemClick={handleClick}/>)
+  return (<SidebarUI items={items} onItemClick={handleClick}/>)
 }

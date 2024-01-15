@@ -4,28 +4,22 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import Paper from "@mui/material/Paper";
-
-const drawerWidth = 240;
-
-type Item = {
-  id: string;
-  text: string;
-}
+import {Category} from "@monorepo/feature";
 
 interface Props {
-  items: Item[];
-  onItemClick: (id:string) => void;
+  items: Category[];
+  onItemClick: (category:Category) => void;
 }
 
-function Sidebar(props: Props) {
+export function SidebarUI(props: Props) {
   return (
-    <Box mt={1} sx={{width: {sm: drawerWidth}, flexShrink: {sm: 0}}}>
+    <Box mt={1} sx={{width: {sm: 240}, flexShrink: {sm: 0}}}>
       <Paper elevation={0} square>
         <List>
           {props.items.map((item) => (
-            <ListItem key={item.id} disablePadding>
-              <ListItemButton onClick={_ => props.onItemClick(item.id)}>
-                <ListItemText primary={item.text}/>
+            <ListItem key={item} disablePadding>
+              <ListItemButton onClick={_ => props.onItemClick(item)}>
+                <ListItemText primary={item}/>
               </ListItemButton>
             </ListItem>
           ))}
@@ -34,5 +28,3 @@ function Sidebar(props: Props) {
     </Box>
   );
 }
-
-export default Sidebar;

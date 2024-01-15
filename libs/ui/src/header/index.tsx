@@ -10,7 +10,7 @@ const StyledAppBar = styled(AppBar)<AppBarProps>(({theme}) => ({
   color: theme.palette.success.second
 }));
 
-function Header() {
+export function Header() {
   return (
     <Box component="header" sx={{flexGrow: 1}}>
       <StyledAppBar position="static">
@@ -29,4 +29,3 @@ function Header() {
   );
 }
 
-export default Header;

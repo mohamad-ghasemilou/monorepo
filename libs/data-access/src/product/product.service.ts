@@ -1,7 +1,7 @@
 import {ApiClient} from "../api";
 import type {ProductId, CreateProduct} from "@monorepo/feature";
 
-const productsUrl = "/products";
+export const productsUrl = "/products";
 
 export const ProductsService = {
     getAll(limit: number = 20, offset: number = 0) {

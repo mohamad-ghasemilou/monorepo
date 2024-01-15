@@ -11,9 +11,8 @@ export function HomePage(props: Props) {
     <Grid container spacing={4}>
       {
         props.products.map(product =>
-          <Grid item xs={12} sm={6} md={4} lg={3}>
+          <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
             <ProductCard
-              key={product.id}
               id={product.id}
               title={product.title}
               description={product.description}

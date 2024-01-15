@@ -1,4 +1,4 @@
-import {Layout as LayoutUI} from "@monorepo/ui";
+import {LayoutUI} from "@monorepo/ui";
 import {ReactElement} from "react";
 import {useLocation} from "react-router";
 import {routes} from "../routes";
@@ -14,7 +14,6 @@ export function Layout(props:Props) {
 
   //////////////////////////////////////////// C O N D I T I O N S
   const isHome = location.pathname === routes.home
-
 
   //////////////////////////////////////////// JSX
   return (
