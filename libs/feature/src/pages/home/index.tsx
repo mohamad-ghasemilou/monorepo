@@ -3,21 +3,35 @@ import {useQuery} from "@tanstack/react-query";
 import {ProductsService} from "@monorepo/data-access";
 import {useSelector} from "react-redux";
 import {RootState} from "../../../../../apps/client/src/store";
+import {useEffect} from "react";
 
 export function HomePage() {
-  const count = useSelector((state: RootState) => state.category.selected)
+  const category = useSelector((state: RootState) => state.category.selected)
 
-  const {isLoading, error, data} = useQuery({
+  const {isLoadingCategory, errorCategory, data:categoryProducts, refetch} = useQuery({
+    queryKey: [`${category} products`],
+    queryFn: () => ProductsService.getByCategory(category),
+    enabled: false,
+    refetchOnWindowFocus: false,
+  })
+
+  console.log({categoryProducts})
+
+  useEffect(() => {
+    if (category === 'all') return
+    refetch()
+  }, [category])
+
+  const {isLoading, error, data:allProducts} = useQuery({
     queryKey: ['allProducts'],
     queryFn: () => ProductsService.getAll(),
   })
 
   if (isLoading) return <h1>loading products</h1> //todo: use skeleton
-
-  return <h1>{count}</h1>
+  if (isLoadingCategory) return <h1>loading products</h1> //todo: use skeleton
 
   return (
-    <HomePageUI products={data}/>
+    <HomePageUI products={category === 'all' ? allProducts : categoryProducts ?? []}/>
   );
 }
 
