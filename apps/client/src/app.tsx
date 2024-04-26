@@ -1,7 +1,7 @@
 import {lazy, Suspense} from 'react'
 import {Route, Routes, Link} from 'react-router-dom';
 import {routes, Layout} from "@monorepo/feature"
-import styles from './app.module.scss';
+//import styles from './app.module.scss';
 
 const LazyHomePage = lazy(() => import("../../../libs/feature/src/pages/home/index"));
 const LazyProductPage = lazy(() => import("../../../libs/feature/src/pages/product/index"));

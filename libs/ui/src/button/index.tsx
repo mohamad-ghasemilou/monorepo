@@ -1,11 +1,13 @@
+import {ReactNode} from 'react';
 import {Button as MuiButton} from "@mui/material";
 
-/* eslint-disable-next-line */
-export interface UiProps {}
+export interface UiProps {
+  children: ReactNode
+}
 
 export function Button(props: UiProps) {
   return (
-    <MuiButton variant="contained">button</MuiButton>
+    <MuiButton variant="contained">{props.children}</MuiButton>
   );
 }
 

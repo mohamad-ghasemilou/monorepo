@@ -1,4 +1,4 @@
-export type ProductId = number;
+export type ProductId = string | undefined;
 
 export interface Product {
   id: ProductId;

@@ -1,4 +1,4 @@
-import Header from "./index"
+import {Header} from "./index"
 import { Meta } from '@storybook/react'
 import {withRouter} from "storybook-addon-react-router-v6";
 

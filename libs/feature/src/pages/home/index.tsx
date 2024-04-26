@@ -5,9 +5,9 @@ import {useSelector} from "react-redux";
 import {useEffect} from "react";
 
 export function HomePage() {
-  const category = useSelector((state) => state.category.selected)
+  const category = useSelector((state:any) => state.category.selected)
 
-  const {isLoadingCategory, errorCategory, data:categoryProducts, refetch} = useQuery({
+  const {isLoading:isLoadingCategory, error:errorCategory, data:categoryProducts, refetch} = useQuery({
     queryKey: [`${category} products`],
     queryFn: () => ProductsService.getByCategory(category),
     enabled: false,
